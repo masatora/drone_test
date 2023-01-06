@@ -8,8 +8,7 @@ platform:
   arch: amd64
 
 steps:
-- name: backend
-  image: python:3.8.10
+- name: hello
   commands:
-  - python -h
+  - echo 'hellow world'
 ...
