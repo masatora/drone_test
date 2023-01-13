@@ -11,6 +11,6 @@ steps:
 - name: build
   image: docker:dind
   commands:
-  - docker build -f /d/ProgramFiles/project/drone_test/Dockerfile_frontend --no-cache --tag 127.0.0.1:5000/drone_test:0.1 .
+  - docker build -f /home/Dockerfile_frontend --no-cache --tag 127.0.0.1:5000/drone_test:0.1 .
   - docker push 127.0.0.1:5000/drone_test:0.1
 ...
