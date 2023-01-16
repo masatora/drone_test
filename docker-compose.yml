@@ -21,7 +21,7 @@ services:
           memory: 2G
     environment:
       TZ: Asia/Taipei
-      DRONE_SERVER_HOST: 644a-140-112-179-52.jp.ngrok.io
+      DRONE_SERVER_HOST: drone.thinktron.co
       DRONE_SERVER_PROTO: https
       DRONE_RPC_SECRET: d00d424beb7cea21602f558d8b646d9b
       DRONE_GITHUB_CLIENT_ID: 304356fb1598ee6f58c0
