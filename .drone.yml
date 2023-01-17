@@ -21,12 +21,8 @@ steps:
   #     dockerfile: Dockerfile_frontend
 
   - name: run-container
-    image: appleboy/drone-ssh
-    settings:
-      host:
-        - 127.0.0.1
     # privileged: true
-    script:
+    commands:
       - docker --help
       # - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
       # - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
