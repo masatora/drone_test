@@ -24,7 +24,8 @@ steps:
     image: docker:dind
     privileged: true
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    - name: dockersock
+      path: /var/run
     commands:
       - docker rm --force drone_test
       - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
