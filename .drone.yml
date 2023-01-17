@@ -22,6 +22,8 @@ steps:
 
   - name: run-container
     image: docker:dind
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - docker rm --force drone_test
       - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
