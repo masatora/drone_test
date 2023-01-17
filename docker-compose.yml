@@ -20,16 +20,17 @@ services:
         limits:
           memory: 2G
     environment:
-      TZ: Asia/Taipei
-      DRONE_SERVER_HOST: drone.thinktron.co
-      DRONE_SERVER_PROTO: https
-      DRONE_RPC_SECRET: d00d424beb7cea21602f558d8b646d9b
-      DRONE_GITHUB_CLIENT_ID: 304356fb1598ee6f58c0
-      DRONE_GITHUB_CLIENT_SECRET: a07bb48243b9d9240a1249352dd0541ca99442b1
-      DRONE_DEBUG: true
-      DRONE_LOGS_PRETTY: true
-      DRONE_LOGS_COLOR: true
-      DRONE_LOGS_TRACE: true
+      - TZ=Asia/Taipei
+      - DRONE_SERVER_HOST=drone.thinktron.co
+      - DRONE_SERVER_PROTO=https
+      - DRONE_RPC_SECRET=d00d424beb7cea21602f558d8b646d9b
+      - DRONE_GITHUB_CLIENT_ID=304356fb1598ee6f58c0
+      - DRONE_GITHUB_CLIENT_SECRET=a07bb48243b9d9240a1249352dd0541ca99442b1
+      - DRONE_DEBUG=true
+      - DRONE_LOGS_PRETTY=true
+      - DRONE_LOGS_COLOR=true
+      - DRONE_LOGS_TRACE=true
+      - DRONE_USER_CREATE=admin:true
 
   drone-runner:
     image: drone/drone-runner-docker:1.8.2
@@ -51,16 +52,16 @@ services:
     # depends_on:
     #   - drone-server
     environment:
-      TZ: Asia/Taipei
-      DRONE_RPC_HOST: drone.server
-      DRONE_RPC_SECRET: d00d424beb7cea21602f558d8b646d9b
-      DRONE_RPC_PROTO: http
-      DRONE_RUNNER_CAPACITY: 5
-      DRONE_RUNNER_NAME: drone-docker-runner
-      DRONE_DEBUG: true
-      DRONE_LOGS_PRETTY: true
-      DRONE_LOGS_COLOR: true
-      DRONE_LOGS_TRACE: true
+      - TZ=Asia/Taipei
+      - DRONE_RPC_HOST=drone.server
+      - DRONE_RPC_SECRET=d00d424beb7cea21602f558d8b646d9b
+      - DRONE_RPC_PROTO=http
+      - DRONE_RUNNER_CAPACITY=5
+      - DRONE_RUNNER_NAME=drone-docker-runner
+      - DRONE_DEBUG=true
+      - DRONE_LOGS_PRETTY=true
+      - DRONE_LOGS_COLOR=true
+      - DRONE_LOGS_TRACE=true
 
 networks:
   drone:
