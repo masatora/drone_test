@@ -21,11 +21,8 @@ steps:
       dockerfile: Dockerfile_frontend
 
   - name: run-container
-    image: docker:dind
-    privileged: true
-    volumes:
-    - name: dockersock
-      path: /var/run/docker.sock
+    # image: appleboy/drone-ssh
+    # privileged: true
     commands:
       - docker rm --force drone_test
       - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
