@@ -12,19 +12,22 @@ platform:
 #   - tag
 
 steps:
-  - name: build-image-push
-    image: plugins/docker
-    settings:
-      tags: ${DRONE_TAG}
-      repo: 331f-140-112-179-52.jp.ngrok.io/drone_test
-      registry: 331f-140-112-179-52.jp.ngrok.io
-      dockerfile: Dockerfile_frontend
+  # - name: build-image-push
+  #   image: plugins/docker
+  #   settings:
+  #     tags: ${DRONE_TAG}
+  #     repo: 331f-140-112-179-52.jp.ngrok.io/drone_test
+  #     registry: 331f-140-112-179-52.jp.ngrok.io
+  #     dockerfile: Dockerfile_frontend
 
   - name: run-container
-    # image: appleboy/drone-ssh
+    image: appleboy/drone-ssh
+    settings:
+      host: 127.0.0.1
+      username: root
     # privileged: true
     commands:
       - docker rm --force drone_test
-      - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
-      - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
-      - docker run -d --name  drone_test -p 9999:80 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
+      # - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
+      # - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
+      # - docker run -d --name  drone_test -p 9999:80 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
