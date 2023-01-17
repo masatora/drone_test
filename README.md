@@ -3,4 +3,3 @@ docker run -d --name dind --privileged --network drone -v /d/ProgramFiles/projec
 
 docker run -d -p 5000:5000 --name tora_registry --network drone -v /d/registry:/var/lib/registry registry
 
-testtesttesttest
