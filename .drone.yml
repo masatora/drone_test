@@ -23,11 +23,12 @@ steps:
   - name: run-container
     image: appleboy/drone-ssh
     settings:
-      host: 192.168.2.110
+      host:
+        - 127.0.0.1
       username: root
     # privileged: true
-    commands:
-      - docker rm --force drone_test
+    script:
+      - docker --help
       # - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
       # - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
       # - docker run -d --name  drone_test -p 9999:80 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
