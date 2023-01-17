@@ -21,7 +21,7 @@ steps:
       dockerfile: Dockerfile_frontend
 
   - name: run-container
-    image: docker
+    image: docker:dind
     privileged: true
     volumes:
     - name: dockersock
