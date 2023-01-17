@@ -11,8 +11,21 @@ steps:
 - name: build-image-push
   image: plugins/docker
   settings:
-    repo: 331f-140-112-179-52.jp.ngrok.io/drone_test
     tags: ${DRONE_TAG}
+    repo: 331f-140-112-179-52.jp.ngrok.io/drone_test
     registry: 331f-140-112-179-52.jp.ngrok.io
     dockerfile: Dockerfile_frontend
+
+- name: run-container
+  image: docker
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  commands:
+    docker rm drone_test:latest
+    docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
+    docker run -d --name  drone_test -p 9999:80 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
+
+# trigger:
+#   event:
+#   - tag
 ...
