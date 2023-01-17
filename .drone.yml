@@ -21,7 +21,7 @@ steps:
       dockerfile: Dockerfile_frontend
 
   - name: run-container
-    image: plugins/docker
+    image: docker:dind
     commands:
       - docker rm --force drone_test
       - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
