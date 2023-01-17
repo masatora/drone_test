@@ -12,7 +12,7 @@ steps:
   image: plugins/docker
   settings:
     repo: 331f-140-112-179-52.jp.ngrok.io/drone_test
-    tags: latest
+    tags: ${DRONE_TAG}
     registry: 331f-140-112-179-52.jp.ngrok.io
     dockerfile: Dockerfile_frontend
 ...
