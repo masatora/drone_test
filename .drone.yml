@@ -23,6 +23,6 @@ steps:
   - name: run-container
     image: docker
     commands:
-      - docker rm drone_test:latest
+      - docker rm --force drone_test
       - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
       - docker run -d --name  drone_test -p 9999:80 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
