@@ -31,6 +31,7 @@ steps:
         from_secret: docker_password2
     # privileged: true
     commands:
+      - cd /
       - ls -al
       - uname -a
       # - docker rm --force drone_test
