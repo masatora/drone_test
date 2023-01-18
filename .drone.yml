@@ -35,12 +35,12 @@ steps:
     # privileged: true
     script:
       - echo "fuck you"
-    commands:
-      - cd /home
-      - ls -al
-      - uname -a
-      - ssh --help
-      - docker --help
+    # commands:
+    #   - cd /home
+    #   - ls -al
+    #   - uname -a
+    #   - ssh --help
+    #   - docker --help
       # - docker rm --force drone_test
       # - docker rmi 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
       # - docker pull 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
