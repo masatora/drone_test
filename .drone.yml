@@ -12,13 +12,13 @@ platform:
 #   - tag
 
 steps:
-  # - name: build-image-push
-  #   image: plugins/docker
-  #   settings:
-  #     tags: ${DRONE_TAG}
-  #     repo: 3048-140-112-179-52.jp.ngrok.io/web_frontend
-  #     registry: 3048-140-112-179-52.jp.ngrok.io
-  #     dockerfile: Dockerfile_frontend
+  - name: build-image-push
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_TAG}
+      repo: 3048-140-112-179-52.jp.ngrok.io/web_frontend
+      registry: 3048-140-112-179-52.jp.ngrok.io
+      dockerfile: Dockerfile_frontend
 
   - name: run-container
     image: appleboy/drone-ssh
