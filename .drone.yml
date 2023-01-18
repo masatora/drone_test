@@ -33,8 +33,13 @@ steps:
         from_secret: docker_password
       # command_timeout: 2m
       script:
-        # - docker rm --force web_frontend
-        # - docker rmi 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
+        - echo hello
+        - echo world
+      script:
+        - docker rm --force web_frontend
+      script:
+        - docker rmi 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
+      script:
         - docker pull 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
       script:
         - docker run -d --name web_frontend -p 9999:80 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
