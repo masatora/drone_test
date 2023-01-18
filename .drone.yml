@@ -31,10 +31,13 @@ steps:
         from_secret: docker_password
     # privileged: true
     commands:
-      - ls
-    script:
-      - docker --help
-      # - docker rm --force drone_test
-      # - docker rmi 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
-      # - docker pull 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
-      # - docker run -d --name  drone_test -p 9999:80 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+      - docker rm --force drone_test
+      - docker rmi 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+      - docker pull 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+      - docker run -d --name  drone_test -p 9999:80 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+    # script:
+    #   - docker --help
+    #   - docker rm --force drone_test
+    #   - docker rmi 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+    #   - docker pull 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+    #   - docker run -d --name  drone_test -p 9999:80 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
