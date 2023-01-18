@@ -22,7 +22,6 @@ steps:
 
   - name: run-container
     image: appleboy/drone-ssh
-    # pull: true
     settings:
       host:
         - 192.168.2.110
@@ -32,9 +31,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-    privileged: true
-    script:
-      - docker rm --force web_frontend
-      - docker rmi 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
-      - docker pull 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
-      - docker run -d --name  web_frontend -p 9999:80 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
+      command_timeout: 2m
+      script:
+        - docker rm --force web_frontend
+        - docker rmi 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
+        - docker pull 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
+        - docker run -d --name  web_frontend -p 9999:80 3048-140-112-179-52.jp.ngrok.io/web_frontend:latest
