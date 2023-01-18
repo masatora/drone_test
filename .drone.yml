@@ -31,7 +31,7 @@ steps:
         from_secret: docker_password
     # privileged: true
     script:
-      - docker ps -a
+      - ps -aux
       # - docker rm --force drone_test
       # - docker rmi 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
       # - docker pull 331f-140-112-179-52.jp.ngrok.io/drone_test:latest
