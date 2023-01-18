@@ -5,4 +5,4 @@ docker run -d -p 5000:5000 --name tora_registry --network drone -v /d/registry:/
 
 testtesttesttesttesttesttest
 
-testtesttesttesttest
+testtesttesttesttesttest
