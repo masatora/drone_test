@@ -27,7 +27,7 @@ steps:
       host: 192.168.0.128
       username:
         from_secret: docker_username
-      secrets:
+      password:
         from_secret: docker_password
     # privileged: true
     script:
