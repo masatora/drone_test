@@ -16,7 +16,7 @@ steps:
   #   image: plugins/docker
   #   settings:
   #     tags: ${DRONE_TAG}
-  #     repo: 3048-140-112-179-52.jp.ngrok.io/drone_test
+  #     repo: 3048-140-112-179-52.jp.ngrok.io/web_frontend
   #     registry: 3048-140-112-179-52.jp.ngrok.io
   #     dockerfile: Dockerfile_frontend
 
@@ -25,19 +25,19 @@ steps:
     # pull: true
     settings:
       host:
-        - 192.168.0.128
+        - 192.168.2.110
       port:
         - 22
       username:
-        from_secret: docker_username2
+        from_secret: docker_username
       password:
-        from_secret: docker_password2
+        from_secret: docker_password
     # privileged: true
     script:
-      - docker rm --force drone_test
+      - docker rm --force web_frontend
       - docker rmi 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
       - docker pull 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
-      - docker run -d --name  drone_test -p 9999:80 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
+      - docker run -d --name  web_frontend -p 9999:80 3048-140-112-179-52.jp.ngrok.io/drone_test:latest
     # commands:
     #   - cd /home
     #   - ls -al
