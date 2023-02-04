@@ -32,7 +32,7 @@ steps:
         from_secret: docker_password
       script:
         docker rm --force web_frontend &&
-        docker rmi 362b-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
+        # docker rmi 362b-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
         docker pull 362b-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
         docker run -d --name web_frontend -p 9999:80 362b-140-112-179-52.jp.ngrok.io/web_frontend:latest
     when:
