@@ -50,22 +50,22 @@ steps:
       event:
         - tag
 
-  - name: rollback-version-image
-    image: appleboy/drone-ssh
-    settings:
-      host:
-        - 192.168.2.110
-      port:
-        - 22
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      script:
-        docker pull df17-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
-        docker rm --force web_frontend &&
-        docker rmi df17-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
-        docker run -d --name web_frontend -p 9999:80 df17-140-112-179-52.jp.ngrok.io/web_frontend:latest
-    when:
-      event:
-        - rollback
+  # - name: rollback-version-image
+  #   image: appleboy/drone-ssh
+  #   settings:
+  #     host:
+  #       - 192.168.2.110
+  #     port:
+  #       - 22
+  #     username:
+  #       from_secret: docker_username
+  #     password:
+  #       from_secret: docker_password
+  #     script:
+  #       docker pull df17-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
+  #       docker rm --force web_frontend &&
+  #       docker rmi df17-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
+  #       docker run -d --name web_frontend -p 9999:80 df17-140-112-179-52.jp.ngrok.io/web_frontend:latest
+  #   when:
+  #     event:
+  #       - rollback
