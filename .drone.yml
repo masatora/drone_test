@@ -30,7 +30,6 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      # command_timeout: 2m
       script:
         docker rm --force web_frontend &&
         docker rmi df17-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
