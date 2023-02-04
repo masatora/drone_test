@@ -63,10 +63,10 @@ steps:
       password:
         from_secret: docker_password
       script:
-        docker pull 8a39-140-112-179-52.jp.ngrok.io/web_frontend:${DRONE_TAG} &&
+        docker pull 8a39-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
         docker rm --force web_frontend &&
         docker rmi 8a39-140-112-179-52.jp.ngrok.io/web_frontend:latest &&
-        docker run -d --name web_frontend -p 9999:80 8a39-140-112-179-52.jp.ngrok.io/web_frontend:${DRONE_TAG}
+        docker run -d --name web_frontend -p 9999:80 8a39-140-112-179-52.jp.ngrok.io/web_frontend:latest
     when:
       event:
         - rollback
