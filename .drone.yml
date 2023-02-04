@@ -7,10 +7,6 @@ platform:
   os: linux
   arch: amd64
 
-# trigger:
-#   event:
-#   - tag
-
 steps:
   - name: build-latest-image
     image: plugins/docker
@@ -66,7 +62,6 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      # command_timeout: 2m
       script:
         docker pull 8a39-140-112-179-52.jp.ngrok.io/web_frontend:${DRONE_TAG} &&
         docker rm --force web_frontend &&
